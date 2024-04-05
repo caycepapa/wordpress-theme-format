@@ -1,0 +1,7 @@
+@use '../../foundations/var' as *;
+
+.u-width__short{
+    max-width: 45.0rem;
+    width: 100%;
+    margin-inline: auto;
+}

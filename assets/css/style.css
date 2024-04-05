@@ -1,0 +1,1058 @@
+/*!********************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./src/scss/style.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+/*レスポンシブ用*/
+:root {
+  --container-width: 110.0rem;
+  --side-margin: 2.4rem;
+}
+@media only screen and (max-width: 767px) {
+  :root {
+    --side-margin: 1.6rem;
+  }
+}
+
+:root {
+  --color-main: #17339C;
+  --color-txt: #000;
+  --color-white: #ffffff;
+  --color-blue: #1877f2;
+  --color-paleblue: #ccdcfe;
+  --color-lightblue: #2ea7e0;
+  --color-yellow: #ffdc26;
+  --color-navy: #213378;
+  --color-thinblue: #E8F8FF;
+  --color-gray: #EEE;
+}
+
+:root {
+  --font-main: "Noto Sans JP", sans-serif;
+  --font-en: "Roboto", sans-serif;
+  --font-point: "Noto Sans JP", sans-serif;
+  --font-point02: "Noto Sans JP", sans-serif;
+  --font-outfit: "Outfit", sans-serif;
+}
+
+:root {
+  --default-margin: 1.6rem;
+  --margin-xs: calc(var(--default-margin) / 4);
+  --margin-s: calc(var(--default-margin) / 2);
+  --margin-m: var(--default-margin);
+  --margin-l: calc(var(--default-margin) * 1.5);
+  --margin-2l: calc(var(--default-margin) * 2);
+  --margin-3l: calc(var(--default-margin) * 3);
+  --margin-4l: calc(var(--default-margin) * 4);
+  --margin-5l: calc(var(--default-margin) * 5);
+  --margin-6l: calc(var(--default-margin) * 6);
+}
+
+/*-----------------------------------------
+mixins
+-----------------------------------------*/
+body {
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  line-height: 1;
+}
+
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+input,
+textarea {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: normal;
+  font-style: normal;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+main,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section,
+div,
+address,
+iframe,
+canvas,
+hr,
+textarea {
+  display: block;
+}
+
+iframe {
+  max-width: 100% !important;
+}
+
+img,
+embed,
+object,
+video {
+  max-width: 100%;
+}
+
+a, label {
+  cursor: pointer;
+}
+
+blockquote {
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+address, em {
+  font-style: normal;
+}
+
+hr {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+textarea {
+  resize: vertical;
+  overflow: hidden;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+}
+
+input, button, select {
+  vertical-align: middle;
+  border-radius: 0;
+  box-sizing: border-box;
+  border: 0;
+  background: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  cursor: pointer;
+  white-space: normal;
+  outline: 0;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -webkit-appearance: none;
+}
+
+button,
+input[type=reset],
+input[type=button],
+input[type=submit],
+input[type=checkbox],
+input[type=radio],
+select {
+  box-sizing: border-box;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-indent: 0.01px;
+  text-overflow: "";
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+*:before, *:after {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*:before, *:after {
+  box-sizing: border-box;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+br {
+  font-size: 0;
+}
+
+::-moz-selection {
+  background: var(--color-navy);
+  color: #FFFFFF;
+}
+
+::selection {
+  background: var(--color-navy);
+  color: #FFFFFF;
+}
+
+input::-moz-selection, textarea::-moz-selection {
+  color: #DDDDDD;
+}
+
+input::selection, textarea::selection {
+  color: #DDDDDD;
+}
+
+html {
+  font-size: 62.5%;
+  min-height: 100%;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 65%;
+  }
+}
+@media only screen and (max-width: 1023px) {
+  html {
+    font-size: 1vw;
+  }
+}
+@media only screen and (max-width: 767px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+body {
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -o-font-smoothing: antialiased;
+  font-smooth: antialiased;
+  line-height: 2;
+  font-family: var(--font-main);
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  font-size: 1.4rem;
+  color: var(--color-txt);
+  background-color: #FFF;
+}
+body.is-fixed {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1.4rem;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: var(--font-main);
+}
+
+input:focus,
+button:focus,
+select:focus,
+textarea:focus,
+a:focus,
+div:focus,
+aside:focus {
+  outline: none;
+}
+
+a {
+  color: #000;
+  text-decoration: underline;
+}
+
+a.is-hover {
+  text-decoration: none;
+}
+
+br.is-pcbr {
+  display: block;
+}
+
+br.is-spbr {
+  display: none;
+}
+
+br.is-tabbr {
+  display: none;
+}
+
+br.is-spsbr {
+  display: none;
+}
+
+@media screen and (max-width: 1023px) {
+  br.is-pcbr {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1023px) {
+  br.is-tabbr {
+    display: block;
+  }
+}
+@media only screen and (max-width: 767px) {
+  br.is-spbr {
+    display: block;
+  }
+}
+@media screen and (max-width: 370px) {
+  br.is-spsbr {
+    display: block;
+  }
+}
+/*レスポンシブ用*/
+:root {
+  --container-width: 110.0rem;
+  --side-margin: 2.4rem;
+}
+@media only screen and (max-width: 767px) {
+  :root {
+    --side-margin: 1.6rem;
+  }
+}
+
+:root {
+  --color-main: #17339C;
+  --color-txt: #000;
+  --color-white: #ffffff;
+  --color-blue: #1877f2;
+  --color-paleblue: #ccdcfe;
+  --color-lightblue: #2ea7e0;
+  --color-yellow: #ffdc26;
+  --color-navy: #213378;
+  --color-thinblue: #E8F8FF;
+  --color-gray: #EEE;
+}
+
+:root {
+  --font-main: "Noto Sans JP", sans-serif;
+  --font-en: "Roboto", sans-serif;
+  --font-point: "Noto Sans JP", sans-serif;
+  --font-point02: "Noto Sans JP", sans-serif;
+  --font-outfit: "Outfit", sans-serif;
+}
+
+:root {
+  --default-margin: 1.6rem;
+  --margin-xs: calc(var(--default-margin) / 4);
+  --margin-s: calc(var(--default-margin) / 2);
+  --margin-m: var(--default-margin);
+  --margin-l: calc(var(--default-margin) * 1.5);
+  --margin-2l: calc(var(--default-margin) * 2);
+  --margin-3l: calc(var(--default-margin) * 3);
+  --margin-4l: calc(var(--default-margin) * 4);
+  --margin-5l: calc(var(--default-margin) * 5);
+  --margin-6l: calc(var(--default-margin) * 6);
+}
+
+/*-----------------------------------------
+mixins
+-----------------------------------------*/
+.l-container {
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-left: var(--side-margin);
+  padding-right: var(--side-margin);
+}
+
+/*レスポンシブ用*/
+:root {
+  --container-width: 110.0rem;
+  --side-margin: 2.4rem;
+}
+
+@media only screen and (max-width: 767px) {
+  :root {
+    --side-margin: 1.6rem;
+  }
+}
+:root {
+  --color-main: #17339C;
+  --color-txt: #000;
+  --color-white: #ffffff;
+  --color-blue: #1877f2;
+  --color-paleblue: #ccdcfe;
+  --color-lightblue: #2ea7e0;
+  --color-yellow: #ffdc26;
+  --color-navy: #213378;
+  --color-thinblue: #E8F8FF;
+  --color-gray: #EEE;
+}
+
+:root {
+  --font-main: "Noto Sans JP", sans-serif;
+  --font-en: "Roboto", sans-serif;
+  --font-point: "Noto Sans JP", sans-serif;
+  --font-point02: "Noto Sans JP", sans-serif;
+  --font-outfit: "Outfit", sans-serif;
+}
+
+:root {
+  --default-margin: 1.6rem;
+  --margin-xs: calc(var(--default-margin) / 4);
+  --margin-s: calc(var(--default-margin) / 2);
+  --margin-m: var(--default-margin);
+  --margin-l: calc(var(--default-margin) * 1.5);
+  --margin-2l: calc(var(--default-margin) * 2);
+  --margin-3l: calc(var(--default-margin) * 3);
+  --margin-4l: calc(var(--default-margin) * 4);
+  --margin-5l: calc(var(--default-margin) * 5);
+  --margin-6l: calc(var(--default-margin) * 6);
+}
+
+/*-----------------------------------------
+mixins
+-----------------------------------------*/
+/*レスポンシブ用*/
+:root {
+  --container-width: 110.0rem;
+  --side-margin: 2.4rem;
+}
+
+@media only screen and (max-width: 767px) {
+  :root {
+    --side-margin: 1.6rem;
+  }
+}
+:root {
+  --color-main: #17339C;
+  --color-txt: #000;
+  --color-white: #ffffff;
+  --color-blue: #1877f2;
+  --color-paleblue: #ccdcfe;
+  --color-lightblue: #2ea7e0;
+  --color-yellow: #ffdc26;
+  --color-navy: #213378;
+  --color-thinblue: #E8F8FF;
+  --color-gray: #EEE;
+}
+
+:root {
+  --font-main: "Noto Sans JP", sans-serif;
+  --font-en: "Roboto", sans-serif;
+  --font-point: "Noto Sans JP", sans-serif;
+  --font-point02: "Noto Sans JP", sans-serif;
+  --font-outfit: "Outfit", sans-serif;
+}
+
+:root {
+  --default-margin: 1.6rem;
+  --margin-xs: calc(var(--default-margin) / 4);
+  --margin-s: calc(var(--default-margin) / 2);
+  --margin-m: var(--default-margin);
+  --margin-l: calc(var(--default-margin) * 1.5);
+  --margin-2l: calc(var(--default-margin) * 2);
+  --margin-3l: calc(var(--default-margin) * 3);
+  --margin-4l: calc(var(--default-margin) * 4);
+  --margin-5l: calc(var(--default-margin) * 5);
+  --margin-6l: calc(var(--default-margin) * 6);
+}
+
+/*-----------------------------------------
+mixins
+-----------------------------------------*/
+/*レスポンシブ用*/
+:root {
+  --container-width: 110.0rem;
+  --side-margin: 2.4rem;
+}
+
+@media only screen and (max-width: 767px) {
+  :root {
+    --side-margin: 1.6rem;
+  }
+}
+:root {
+  --color-main: #17339C;
+  --color-txt: #000;
+  --color-white: #ffffff;
+  --color-blue: #1877f2;
+  --color-paleblue: #ccdcfe;
+  --color-lightblue: #2ea7e0;
+  --color-yellow: #ffdc26;
+  --color-navy: #213378;
+  --color-thinblue: #E8F8FF;
+  --color-gray: #EEE;
+}
+
+:root {
+  --font-main: "Noto Sans JP", sans-serif;
+  --font-en: "Roboto", sans-serif;
+  --font-point: "Noto Sans JP", sans-serif;
+  --font-point02: "Noto Sans JP", sans-serif;
+  --font-outfit: "Outfit", sans-serif;
+}
+
+:root {
+  --default-margin: 1.6rem;
+  --margin-xs: calc(var(--default-margin) / 4);
+  --margin-s: calc(var(--default-margin) / 2);
+  --margin-m: var(--default-margin);
+  --margin-l: calc(var(--default-margin) * 1.5);
+  --margin-2l: calc(var(--default-margin) * 2);
+  --margin-3l: calc(var(--default-margin) * 3);
+  --margin-4l: calc(var(--default-margin) * 4);
+  --margin-5l: calc(var(--default-margin) * 5);
+  --margin-6l: calc(var(--default-margin) * 6);
+}
+
+/*-----------------------------------------
+mixins
+-----------------------------------------*/
+/*レスポンシブ用*/
+:root {
+  --container-width: 110.0rem;
+  --side-margin: 2.4rem;
+}
+
+@media only screen and (max-width: 767px) {
+  :root {
+    --side-margin: 1.6rem;
+  }
+}
+:root {
+  --color-main: #17339C;
+  --color-txt: #000;
+  --color-white: #ffffff;
+  --color-blue: #1877f2;
+  --color-paleblue: #ccdcfe;
+  --color-lightblue: #2ea7e0;
+  --color-yellow: #ffdc26;
+  --color-navy: #213378;
+  --color-thinblue: #E8F8FF;
+  --color-gray: #EEE;
+}
+
+:root {
+  --font-main: "Noto Sans JP", sans-serif;
+  --font-en: "Roboto", sans-serif;
+  --font-point: "Noto Sans JP", sans-serif;
+  --font-point02: "Noto Sans JP", sans-serif;
+  --font-outfit: "Outfit", sans-serif;
+}
+
+:root {
+  --default-margin: 1.6rem;
+  --margin-xs: calc(var(--default-margin) / 4);
+  --margin-s: calc(var(--default-margin) / 2);
+  --margin-m: var(--default-margin);
+  --margin-l: calc(var(--default-margin) * 1.5);
+  --margin-2l: calc(var(--default-margin) * 2);
+  --margin-3l: calc(var(--default-margin) * 3);
+  --margin-4l: calc(var(--default-margin) * 4);
+  --margin-5l: calc(var(--default-margin) * 5);
+  --margin-6l: calc(var(--default-margin) * 6);
+}
+
+/*-----------------------------------------
+mixins
+-----------------------------------------*/
+/*レスポンシブ用*/
+:root {
+  --container-width: 110.0rem;
+  --side-margin: 2.4rem;
+}
+
+@media only screen and (max-width: 767px) {
+  :root {
+    --side-margin: 1.6rem;
+  }
+}
+:root {
+  --color-main: #17339C;
+  --color-txt: #000;
+  --color-white: #ffffff;
+  --color-blue: #1877f2;
+  --color-paleblue: #ccdcfe;
+  --color-lightblue: #2ea7e0;
+  --color-yellow: #ffdc26;
+  --color-navy: #213378;
+  --color-thinblue: #E8F8FF;
+  --color-gray: #EEE;
+}
+
+:root {
+  --font-main: "Noto Sans JP", sans-serif;
+  --font-en: "Roboto", sans-serif;
+  --font-point: "Noto Sans JP", sans-serif;
+  --font-point02: "Noto Sans JP", sans-serif;
+  --font-outfit: "Outfit", sans-serif;
+}
+
+:root {
+  --default-margin: 1.6rem;
+  --margin-xs: calc(var(--default-margin) / 4);
+  --margin-s: calc(var(--default-margin) / 2);
+  --margin-m: var(--default-margin);
+  --margin-l: calc(var(--default-margin) * 1.5);
+  --margin-2l: calc(var(--default-margin) * 2);
+  --margin-3l: calc(var(--default-margin) * 3);
+  --margin-4l: calc(var(--default-margin) * 4);
+  --margin-5l: calc(var(--default-margin) * 5);
+  --margin-6l: calc(var(--default-margin) * 6);
+}
+
+/*-----------------------------------------
+mixins
+-----------------------------------------*/
+/*レスポンシブ用*/
+:root {
+  --container-width: 110.0rem;
+  --side-margin: 2.4rem;
+}
+
+@media only screen and (max-width: 767px) {
+  :root {
+    --side-margin: 1.6rem;
+  }
+}
+:root {
+  --color-main: #17339C;
+  --color-txt: #000;
+  --color-white: #ffffff;
+  --color-blue: #1877f2;
+  --color-paleblue: #ccdcfe;
+  --color-lightblue: #2ea7e0;
+  --color-yellow: #ffdc26;
+  --color-navy: #213378;
+  --color-thinblue: #E8F8FF;
+  --color-gray: #EEE;
+}
+
+:root {
+  --font-main: "Noto Sans JP", sans-serif;
+  --font-en: "Roboto", sans-serif;
+  --font-point: "Noto Sans JP", sans-serif;
+  --font-point02: "Noto Sans JP", sans-serif;
+  --font-outfit: "Outfit", sans-serif;
+}
+
+:root {
+  --default-margin: 1.6rem;
+  --margin-xs: calc(var(--default-margin) / 4);
+  --margin-s: calc(var(--default-margin) / 2);
+  --margin-m: var(--default-margin);
+  --margin-l: calc(var(--default-margin) * 1.5);
+  --margin-2l: calc(var(--default-margin) * 2);
+  --margin-3l: calc(var(--default-margin) * 3);
+  --margin-4l: calc(var(--default-margin) * 4);
+  --margin-5l: calc(var(--default-margin) * 5);
+  --margin-6l: calc(var(--default-margin) * 6);
+}
+
+/*-----------------------------------------
+mixins
+-----------------------------------------*/
+.u-mat {
+  padding: var(--margin-4l) 0;
+  position: relative;
+}
+.u-mat > * {
+  position: relative;
+}
+.u-mat::before {
+  content: "";
+  display: block;
+  width: 100vw;
+  height: 100%;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+@media only screen and (max-width: 1023px) {
+  .u-mat::before {
+    margin-left: calc(var(--side-margin) * -1);
+    margin-right: calc(var(--side-margin) * -1);
+  }
+}
+
+.u-m__xs {
+  margin: var(--margin-xs);
+}
+
+.u-m__s {
+  margin: var(--margin-s);
+}
+
+.u-m__m {
+  margin: var(--margin-m);
+}
+
+.u-m__l {
+  margin: var(--margin-l);
+}
+
+.u-m__2l {
+  margin: var(--margin-2l);
+}
+
+.u-m__3l {
+  margin: var(--margin-3l);
+}
+
+.u-m__4l {
+  margin: var(--margin-4l);
+}
+
+.u-m__5l {
+  margin: var(--margin-5l);
+}
+
+.u-mt__xs {
+  margin-top: var(--margin-xs);
+}
+
+.u-mt__s {
+  margin-top: var(--margin-s);
+}
+
+.u-mt__m {
+  margin-top: var(--margin-m);
+}
+
+.u-mt__l {
+  margin-top: var(--margin-l);
+}
+
+.u-mt__2l {
+  margin-top: var(--margin-2l);
+}
+
+.u-mt__3l {
+  margin-top: var(--margin-3l);
+}
+
+.u-mt__4l {
+  margin-top: var(--margin-4l);
+}
+
+.u-mt__5l {
+  margin-top: var(--margin-5l);
+}
+
+.u-mb__xs {
+  margin-bottom: var(--margin-xs);
+}
+
+.u-mb__s {
+  margin-bottom: var(--margin-s);
+}
+
+.u-mb__m {
+  margin-bottom: var(--margin-m);
+}
+
+.u-mb__l {
+  margin-bottom: var(--margin-l);
+}
+
+.u-mb__2l {
+  margin-bottom: var(--margin-2l);
+}
+
+.u-mb__3l {
+  margin-bottom: var(--margin-3l);
+}
+
+.u-mb__4l {
+  margin-bottom: var(--margin-4l);
+}
+
+.u-mb__5l {
+  margin-bottom: var(--margin-5l);
+}
+
+.u-margin-ia {
+  margin-inline: auto;
+}
+
+.u-p__xs {
+  padding: var(--margin-xs);
+}
+
+.u-p__s {
+  padding: var(--margin-s);
+}
+
+.u-p__m {
+  padding: var(--margin-m);
+}
+
+.u-p__l {
+  padding: var(--margin-l);
+}
+
+.u-p__2l {
+  padding: var(--margin-2l);
+}
+
+.u-p__3l {
+  padding: var(--margin-3l);
+}
+
+.u-p__4l {
+  padding: var(--margin-4l);
+}
+
+.u-p__5l {
+  padding: var(--margin-5l);
+}
+
+.u-pt__xs {
+  padding-top: var(--margin-xs);
+}
+
+.u-pt__s {
+  padding-top: var(--margin-s);
+}
+
+.u-pt__m {
+  padding-top: var(--margin-m);
+}
+
+.u-pt__l {
+  padding-top: var(--margin-l);
+}
+
+.u-pt__2l {
+  padding-top: var(--margin-2l);
+}
+
+.u-pt__3l {
+  padding-top: var(--margin-3l);
+}
+
+.u-pt__4l {
+  padding-top: var(--margin-4l);
+}
+
+.u-pt__5l {
+  padding-top: var(--margin-5l);
+}
+
+.u-pb__xs {
+  padding-bottom: var(--margin-xs);
+}
+
+.u-pb__s {
+  padding-bottom: var(--margin-s);
+}
+
+.u-pb__m {
+  padding-bottom: var(--margin-m);
+}
+
+.u-pb__l {
+  padding-bottom: var(--margin-l);
+}
+
+.u-pb__2l {
+  padding-bottom: var(--margin-2l);
+}
+
+.u-pb__3l {
+  padding-bottom: var(--margin-3l);
+}
+
+.u-pb__4l {
+  padding-bottom: var(--margin-4l);
+}
+
+.u-pb__5l {
+  padding-bottom: var(--margin-5l);
+}
+
+.u-m__xs {
+  margin: var(--margin-xs);
+}
+
+.u-m__s {
+  margin: var(--margin-s);
+}
+
+.u-m__m {
+  margin: var(--margin-m);
+}
+
+.u-m__l {
+  margin: var(--margin-l);
+}
+
+.u-m__2l {
+  margin: var(--margin-2l);
+}
+
+.u-m__3l {
+  margin: var(--margin-3l);
+}
+
+.u-m__4l {
+  margin: var(--margin-4l);
+}
+
+.u-m__5l {
+  margin: var(--margin-5l);
+}
+
+.u-color__blue {
+  color: var(--color-main);
+}
+
+.u-color__black {
+  color: var(--color-txt);
+}
+
+.u-width__short {
+  max-width: 45rem;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.u-home__messagemat {
+  padding-top: 5.46875vw;
+  padding-bottom: 5.46875vw;
+}
+@media only screen and (max-width: 767px) {
+  .u-home__messagemat {
+    padding-top: 18.9189189189vw;
+    padding-bottom: 18.9189189189vw;
+  }
+}
+
+.u-home__policymat {
+  padding-bottom: 5.46875vw;
+}
+@media only screen and (max-width: 767px) {
+  .u-home__policymat {
+    padding-bottom: 18.9189189189vw;
+  }
+}
+
+.u-home__profilemat {
+  padding-right: var(--margin-5l);
+  padding-left: var(--margin-5l);
+}
+@media only screen and (max-width: 767px) {
+  .u-home__profilemat {
+    padding-right: 1.6rem;
+    padding-left: 1.6rem;
+  }
+}
+
+.u-home__topicsmat {
+  text-align: center;
+}
+
+.u-home__sns {
+  display: block;
+}
+@media only screen and (max-width: 767px) {
+  .u-home__sns {
+    display: none;
+  }
+}

@@ -1,0 +1,41 @@
+@use "../../foundations/var" as *;
+
+.u-home__messagemat{
+    padding-top: getpc_vw(70);
+    padding-bottom: getpc_vw(70);
+
+    @include spl{
+        padding-top: getsp_vw(70);
+        padding-bottom: getsp_vw(70);
+    }
+}
+
+.u-home__policymat{
+    padding-bottom: getpc_vw(70);
+
+    @include spl{
+        padding-bottom: getsp_vw(70);
+    }
+}
+
+.u-home__profilemat{
+    padding-right: var(--margin-5l);
+    padding-left: var(--margin-5l);
+
+    @include spl{
+        padding-right: 1.6rem;
+        padding-left: 1.6rem;
+    }
+}
+
+.u-home__topicsmat{
+    text-align: center;
+}
+
+.u-home__sns{
+    display: block;
+
+    @include spl{
+        display: none;
+    }
+}
