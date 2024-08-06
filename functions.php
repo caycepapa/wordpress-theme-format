@@ -2,7 +2,7 @@
 
     /**
     * @package WordPress
-    * @subpackage projectname
+    * @subpackage valo
     * @since 2024
     */
     if ( !defined('ABSPATH') ) {
