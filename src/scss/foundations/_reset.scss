@@ -238,17 +238,33 @@ html {
     padding: 0;
     scroll-behavior:smooth;
 
-    @media screen and (min-width: 1200px) {
-        font-size: 65%;
+    /* レスポンシブフォント */
+    // 画面サイズに合わせてフォントサイズを変更する場合は以下のコメントアウトを解除してください
+    /*
+    @media screen and (min-width: 1023px) {
+        font-size: .8vw;
+    }
+
+    @media screen and (min-width: 1281px) {
+        font-size: .8vw;
+    }
+
+    @media screen and (min-width: 1401px) {
+        font-size: .7vw;
+    }
+
+    @media screen and (min-width: 2001px) {
+        font-size: 87.5%;
     }
 
     @include tab{
-        font-size: 1vw;
+        font-size: 62.5%;
     }
 
     @include spl{
         font-size: 62.5%;
     }
+    */
 }
 
 body {
