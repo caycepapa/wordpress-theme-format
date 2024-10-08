@@ -2,7 +2,7 @@
     // Template Name: ページパーツ
     /**
     * @package WordPress
-    * @subpackage valo
+    * @subpackage projectname
     * @since 2024
     */
 

@@ -1,3 +1,15 @@
+<?php
+
+    /**
+    * @package WordPress
+    * @subpackage projectname
+    * @since 2023
+    */
+    if ( !defined('ABSPATH') ) {
+        die( 'Forbidden' );
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -7,17 +19,17 @@
     <link rel="icon" href="<?php echo esc_url(get_template_directory_uri());?>/favicon.ico">
     <meta name="viewport" content="width=device-width, height=device-height ,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description" content="<?php bloginfo('description');?>">
-    <meta property="og:title" content="<?php bloginfo('site_name');?>">
+    <meta property="og:title" content="<?php the_create_title();?>">
+    <meta property="og:site_name" content="<?php bloginfo('site_name');?>">
     <meta property="og:description" content="<?php bloginfo('description');?>">
-    <meta property="og:url" content="https://www.one-dejima.com/">
+    <meta property="og:url" content="<?php the_permalink();?>">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="<?php echo esc_url(get_template_directory_uri());?>/assets/img/ogp.jpg">
+    <meta property="og:image" content="<?php echo esc_url(get_template_directory_uri());?>/assets/img/cmn/ogp.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="<?php bloginfo('site_name');?>">
+    <meta name="twitter:title" content="<?php the_create_title();?>">
     <meta name="twitter:description" content="<?php bloginfo('description');?>">
-    <meta property="twitter:image" content="<?php echo esc_url(get_template_directory_uri());?>/assets/img/ogp.jpg">
-    <title><?php bloginfo('site_name');?></title>
-    <script src="https://webfont.fontplus.jp/accessor/script/fontplus.js?ou1T6RM1Jn0%3D&box=8adkOtDQDRQ%3D&aa=1&ab=2"></script>
+    <meta property="twitter:image" content="<?php echo esc_url(get_template_directory_uri());?>/assets/img/cmn/ogp.png">
+    <title><?php the_create_title();?></title>
 </head>
 <body <?php body_class(); ?>>
     <div class="l-container" id="top">

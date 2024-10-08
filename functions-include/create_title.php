@@ -2,7 +2,7 @@
 
     /**
     * @package WordPress
-    * @subpackage valo
+    * @subpackage projectname
     * @since 2023
     */
     if ( !defined('ABSPATH') ) {
@@ -19,11 +19,11 @@ add_filter( 'get_the_archive_title', function ($title) {
 	} elseif (is_post_type_archive() ){
 		$title = post_type_archive_title('',false);
 	} elseif (is_date()) {
-	    $title = get_the_time('Y年n月');
+        $title = get_the_time('Y年n月');
 	} elseif (is_search()) {
-	    $title = '検索結果：'.esc_html( get_search_query(false) );
+        $title = '検索結果：'.esc_html( get_search_query(false) );
 	} elseif (is_404()) {
-	    $title = '「404」ページが見つかりません';
+        $title = '「404」ページが見つかりません';
 	} else {
         
 	}
@@ -31,9 +31,13 @@ add_filter( 'get_the_archive_title', function ($title) {
 });
 
 function create_title(){
+    // HOME
     if(is_front_page()){
         $title = get_bloginfo('name');
-    }elseif(is_post_type_archive('yakuin')){
+    }
+
+    // archive
+    if(is_post_type_archive('yakuin')){
         $title = '役員専用ページ'.' | '.get_bloginfo('name');
     }elseif(is_post_type_archive('kaiin')){
         $title = '会員専用ページ'.' | '.get_bloginfo('name');
@@ -41,7 +45,12 @@ function create_title(){
         $title = '会員名簿'.' | '.get_bloginfo('name');
     }elseif(is_archive('post')){
         $title = 'お知らせ'.' | '.get_bloginfo('name');
-    }elseif(is_singular('kaiin')){
+    }elseif(is_category()){
+        $title = get_the_title().' | '.get_bloginfo('name');
+    }
+
+    // single&page
+    if(is_singular('kaiin')){
         $title = get_the_title().' | 会員専用ページ | '.get_bloginfo('name');
     }elseif(is_singular('yakuin')){
         $title = get_the_title().' | 役員専用ページ | '.get_bloginfo('name');
@@ -51,10 +60,12 @@ function create_title(){
         $title = get_the_title().' | お知らせ | '.get_bloginfo('name');
     }elseif(is_singular('page')){
         $title = get_the_title().' | '.get_bloginfo('name');
-    }elseif(is_category()){
-        $title = get_the_title().' | '.get_bloginfo('name');
     }else{
         $title = get_the_title().' | '.get_bloginfo('name');
     }
     return $title;
+}
+
+function the_create_title(){
+    echo create_title();
 }

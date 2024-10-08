@@ -1,7 +1,7 @@
 <?php
     /**
     * @package WordPress
-    * @subpackage valo
+    * @subpackage projectname
     * @since 2023
     */
 

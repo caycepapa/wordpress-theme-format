@@ -2,7 +2,7 @@
     // Template Name: Home
     /**
     * @package WordPress
-    * @subpackage valo
+    * @subpackage projectname
     * @since 2024
     */
 
