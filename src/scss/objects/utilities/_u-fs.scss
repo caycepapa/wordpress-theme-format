@@ -1,0 +1,823 @@
+@use "../../foundations/var" as *;
+
+// 10px
+.u-fs__p10s10{
+    font-size: 1.0rem;
+}
+
+.u-fs__p10s11{
+    font-size: 1.0rem;
+    @include spl{
+        font-size: 1.1rem;
+    }
+}
+
+.u-fs__p10s12{
+    font-size: 1.0rem;
+    @include spl{
+        font-size: 1.2rem;
+    }
+}
+
+.u-fs__p10s13{
+    font-size: 1.0rem;
+    @include spl{
+        font-size: 1.3rem;
+    }
+}
+
+.u-fs__p10s14{
+    font-size: 1.0rem;
+    @include spl{
+        font-size: 1.4rem;
+    }
+}
+
+.u-fs__p10s15{
+    font-size: 1.0rem;
+    @include spl{
+        font-size: 1.5rem;
+    }
+}
+
+.u-fs__p10s16{
+    font-size: 1.0rem;
+
+    @include spl{
+        font-size: 1.6rem;
+    }
+}
+
+.u-fs__p10s17{
+    font-size: 1.0rem;
+    @include spl{
+        font-size: 1.7rem;
+    }
+}
+
+.u-fs__p10s18{
+    font-size: 1.0rem;
+    @include spl{
+        font-size: 1.8rem;
+    }
+}
+
+.u-fs__p10s19{
+    font-size: 1.0rem;
+
+    @include spl{
+        font-size: 1.9rem;
+    }
+}
+
+.u-fs__p10s20{
+    font-size: 1.0rem;
+    @include spl{
+        font-size: 2.0rem;
+    }
+}
+
+// 11px
+.u-fs__p11s10{
+    font-size: 1.1rem;
+}
+
+.u-fs__p11s11{
+    font-size: 1.1rem;
+}
+
+.u-fs__p11s12{
+    font-size: 1.1rem;
+    @include spl{
+        font-size: 1.2rem;
+    }
+}
+
+.u-fs__p11s13{
+    font-size: 1.1rem;
+    @include spl{
+        font-size: 1.3rem;
+    }
+}
+
+.u-fs__p11s14{
+    font-size: 1.1rem;
+    @include spl{
+        font-size: 1.4rem;
+    }
+}
+
+.u-fs__p11s15{
+    font-size: 1.1rem;
+    @include spl{
+        font-size: 1.5rem;
+    }
+}
+
+.u-fs__p11s16{
+    font-size: 1.1rem;
+    @include spl{
+        font-size: 1.6rem;
+    }
+}
+
+.u-fs__p11s17{
+    font-size: 1.1rem;
+    @include spl{
+        font-size: 1.7rem;
+    }
+}
+
+.u-fs__p11s18{
+    font-size: 1.1rem;
+    @include spl{
+        font-size: 1.8rem;
+    }
+}
+
+.u-fs__p11s19{
+    font-size: 1.1rem;
+    @include spl{
+        font-size: 1.9rem;
+    }
+}
+
+.u-fs__p11s20{
+    font-size: 1.1rem;
+    @include spl{
+        font-size: 2.0rem;
+    }
+}
+
+// 12px
+.u-fs__p12s10{
+    font-size: 1.2rem;
+}
+
+.u-fs__p12s11{
+    font-size: 1.2rem;
+    @include spl{
+        font-size: 1.1rem;
+    }
+}
+
+.u-fs__p12s12{
+    font-size: 1.2rem;
+}
+
+.u-fs__p12s13{
+    font-size: 1.2rem;
+    @include spl{
+        font-size: 1.3rem;
+    }
+}
+
+.u-fs__p12s14{
+    font-size: 1.2rem;
+    @include spl{
+        font-size: 1.4rem;
+    }
+}
+
+.u-fs__p12s15{
+    font-size: 1.2rem;
+    @include spl{
+        font-size: 1.5rem;
+    }
+}
+
+.u-fs__p12s16{
+    font-size: 1.2rem;
+    @include spl{
+        font-size: 1.6rem;
+    }
+}
+
+.u-fs__p12s17{
+    font-size: 1.2rem;
+    @include spl{
+        font-size: 1.7rem;
+    }
+}
+
+.u-fs__p12s18{
+    font-size: 1.2rem;
+
+    @include spl{
+        font-size: 1.8rem;
+    }
+}
+
+.u-fs__p12s19{
+    font-size: 1.2rem;
+    @include spl{
+        font-size: 1.9rem;
+    }
+}
+
+.u-fs__p12s20{
+    font-size: 1.2rem;
+    @include spl{
+        font-size: 2.0rem;
+    }
+}
+
+// 13px
+.u-fs__p13s10{
+    font-size: 1.3rem;
+    @include spl{
+        font-size: 1.0rem;
+    }
+}
+
+.u-fs__p13s11{
+    font-size: 1.3rem;
+    @include spl{
+        font-size: 1.1rem;
+    }
+}
+
+.u-fs__p13s12{
+    font-size: 1.3rem;
+    @include spl{
+        font-size: 1.2rem;
+    }
+}
+
+.u-fs__p13s13{
+    font-size: 1.3rem;
+}
+
+.u-fs__p13s14{
+    font-size: 1.3rem;
+    @include spl{
+        font-size: 1.4rem;
+    }
+}
+
+.u-fs__p13s15{
+    font-size: 1.3rem;
+    @include spl{
+        font-size: 1.5rem;
+    }
+}
+
+.u-fs__p13s16{
+    font-size: 1.3rem;
+    @include spl{
+        font-size: 1.6rem;
+    }
+}
+
+.u-fs__p13s17{
+    font-size: 1.3rem;
+    @include spl{
+        font-size: 1.7rem;
+    }
+}
+
+.u-fs__p13s18{
+    font-size: 1.3rem;
+    @include spl{
+        font-size: 1.8rem;
+    }
+}
+
+.u-fs__p13s19{
+    font-size: 1.3rem;
+    @include spl{
+        font-size: 1.9rem;
+    }
+}
+
+.u-fs__p13s20{
+    font-size: 1.3rem;
+    @include spl{
+        font-size: 2.0rem;
+    }
+}
+
+// 14px
+.u-fs__p14s10{
+    font-size: 1.4rem;
+    @include spl{
+        font-size: 1.0rem;
+    }
+}
+
+.u-fs__p14s11{
+    font-size: 1.4rem;
+    @include spl{
+        font-size: 1.1rem;
+    }
+}
+
+.u-fs__p14s12{
+    font-size: 1.4rem;
+    @include spl{
+        font-size: 1.2rem;
+    }
+}
+
+.u-fs__p14s13{
+    font-size: 1.4rem;
+    @include spl{
+        font-size: 1.3rem;
+    }
+}
+
+.u-fs__p14s14{
+    font-size: 1.4rem;
+}
+
+.u-fs__p14s15{
+    font-size: 1.4rem;
+    @include spl{
+        font-size: 1.5rem;
+    }
+}
+
+.u-fs__p14s16{
+    font-size: 1.4rem;
+    @include spl{
+        font-size: 1.6rem;
+    }
+}
+
+.u-fs__p14s17{
+    font-size: 1.4rem;
+    @include spl{
+        font-size: 1.7rem;
+    }
+}
+
+.u-fs__p14s18{
+    font-size: 1.4rem;
+    @include spl{
+        font-size: 1.8rem;
+    }
+}
+
+.u-fs__p14s19{
+    font-size: 1.4rem;
+    @include spl{
+        font-size: 1.9rem;
+    }
+}
+
+.u-fs__p14s20{
+    font-size: 1.4rem;
+    @include spl{
+        font-size: 2.0rem;
+    }
+}
+
+// 15px
+.u-fs__p15s10{
+    font-size: 1.5rem;
+    @include spl{
+        font-size: 1.0rem;
+    }
+}
+
+.u-fs__p15s11{
+    font-size: 1.5rem;
+    @include spl{
+        font-size: 1.1rem;
+    }
+}
+
+.u-fs__p15s12{
+    font-size: 1.5rem;
+    @include spl{
+        font-size: 1.2rem;
+    }
+}
+
+.u-fs__p15s13{
+    font-size: 1.5rem;
+    @include spl{
+        font-size: 1.3rem;
+    }
+}
+
+.u-fs__p15s14{
+    font-size: 1.5rem;
+    @include spl{
+        font-size: 1.4rem;
+    }
+}
+
+.u-fs__p15s15{
+    font-size: 1.5rem;
+}
+
+.u-fs__p15s16{
+    font-size: 1.5rem;
+    @include spl{
+        font-size: 1.6rem;
+    }
+}
+
+.u-fs__p15s17{
+    font-size: 1.5rem;
+    @include spl{
+        font-size: 1.7rem;
+    }
+}
+
+.u-fs__p15s18{
+    font-size: 1.5rem;
+    @include spl{
+        font-size: 1.8rem;
+    }
+}
+
+.u-fs__p15s19{
+    font-size: 1.5rem;
+    @include spl{
+        font-size: 1.9rem;
+    }
+}
+
+.u-fs__p15s20{
+    font-size: 1.5rem;
+    @include spl{
+        font-size: 2.0rem;
+    }
+}
+
+// 16px
+.u-fs__p16s10{
+    font-size: 1.6rem;
+    @include spl{
+        font-size: 1.0rem;
+    }
+}
+
+.u-fs__p16s11{
+    font-size: 1.6rem;
+    @include spl{
+        font-size: 1.1rem;
+    }
+}
+
+.u-fs__p16s12{
+    font-size: 1.6rem;
+    @include spl{
+        font-size: 1.2rem;
+    }
+}
+
+.u-fs__p16s13{
+    font-size: 1.6rem;
+    @include spl{
+        font-size: 1.3rem;
+    }
+}
+
+.u-fs__p16s14{
+    font-size: 1.6rem;
+    @include spl{
+        font-size: 1.4rem;
+    }
+}
+
+.u-fs__p16s15{
+    font-size: 1.6rem;
+    @include spl{
+        font-size: 1.5rem;
+    }
+}
+
+.u-fs__p16s16{
+    font-size: 1.6rem;
+}
+
+.u-fs__p16s17{
+    font-size: 1.6rem;
+    @include spl{
+        font-size: 1.7rem;
+    }
+}
+
+.u-fs__p16s18{
+    font-size: 1.6rem;
+    @include spl{
+        font-size: 1.8rem;
+    }
+}
+
+.u-fs__p16s19{
+    font-size: 1.6rem;
+    @include spl{
+        font-size: 1.9rem;
+    }
+}
+
+.u-fs__p16s20{
+    font-size: 1.6rem;
+    @include spl{
+        font-size: 2.0rem;
+    }
+}
+
+// 17px
+.u-fs__p17s10{
+    font-size: 1.7rem;
+    @include spl{
+        font-size: 1.0rem;
+    }
+}
+
+.u-fs__p17s11{
+    font-size: 1.7rem;
+    @include spl{
+        font-size: 1.1rem;
+    }
+}
+
+.u-fs__p17s12{
+    font-size: 1.7rem;
+    @include spl{
+        font-size: 1.2rem;
+    }
+}
+
+.u-fs__p17s13{
+    font-size: 1.7rem;
+    @include spl{
+        font-size: 1.3rem;
+    }
+}
+
+.u-fs__p17s14{
+    font-size: 1.7rem;
+    @include spl{
+        font-size: 1.4rem;
+    }
+}
+
+.u-fs__p17s15{
+    font-size: 1.7rem;
+    @include spl{
+        font-size: 1.5rem;
+    }
+}
+
+.u-fs__p17s16{
+    font-size: 1.7rem;
+    @include spl{
+        font-size: 1.6rem;
+    }
+}
+
+.u-fs__p17s17{
+    font-size: 1.7rem;
+}
+
+.u-fs__p17s18{
+    font-size: 1.7rem;
+    @include spl{
+        font-size: 1.8rem;
+    }
+}
+
+.u-fs__p17s19{
+    font-size: 1.7rem;
+    @include spl{
+        font-size: 1.9rem;
+    }
+}
+
+.u-fs__p17s20{
+    font-size: 1.7rem;
+    @include spl{
+        font-size: 2.0rem;
+    }
+}
+
+// 18px
+.u-fs__p18s10{
+    font-size: 1.8rem;
+    @include spl{
+        font-size: 1.0rem;
+    }
+}
+
+.u-fs__p18s11{
+    font-size: 1.8rem;
+    @include spl{
+        font-size: 1.1rem;
+    }
+}
+
+.u-fs__p18s12{
+    font-size: 1.8rem;
+    @include spl{
+        font-size: 1.2rem;
+    }
+}
+
+.u-fs__p18s13{
+    font-size: 1.8rem;
+    @include spl{
+        font-size: 1.3rem;
+    }
+}
+
+.u-fs__p18s14{
+    font-size: 1.8rem;
+    @include spl{
+        font-size: 1.4rem;
+    }
+}
+
+.u-fs__p18s15{
+    font-size: 1.8rem;
+    @include spl{
+        font-size: 1.5rem;
+    }
+}
+
+.u-fs__p18s16{
+    font-size: 1.8rem;
+    @include spl{
+        font-size: 1.6rem;
+    }
+}
+
+.u-fs__p18s17{
+    font-size: 1.8rem;
+    @include spl{
+        font-size: 1.7rem;
+    }
+}
+
+.u-fs__p18s18{
+    font-size: 1.8rem;
+}
+
+.u-fs__p18s19{
+    font-size: 1.8rem;
+    @include spl{
+        font-size: 1.9rem;
+    }
+}
+
+.u-fs__p18s20{
+    font-size: 1.8rem;
+    @include spl{
+        font-size: 2.0rem;
+    }
+}
+
+// 19px
+.u-fs__p19s10{
+    font-size: 1.9rem;
+    @include spl{
+        font-size: 1.0rem;
+    }
+}
+
+.u-fs__p19s11{
+    font-size: 1.9rem;
+    @include spl{
+        font-size: 1.1rem;
+    }
+}
+
+.u-fs__p19s12{
+    font-size: 1.9rem;
+    @include spl{
+        font-size: 1.2rem;
+    }
+}
+
+.u-fs__p19s13{
+    font-size: 1.9rem;
+    @include spl{
+        font-size: 1.3rem;
+    }
+}
+
+.u-fs__p19s14{
+    font-size: 1.9rem;
+    @include spl{
+        font-size: 1.4rem;
+    }
+}
+
+.u-fs__p19s15{
+    font-size: 1.9rem;
+    @include spl{
+        font-size: 1.5rem;
+    }
+}
+
+.u-fs__p19s16{
+    font-size: 1.9rem;
+    @include spl{
+        font-size: 1.6rem;
+    }
+}
+
+.u-fs__p19s17{
+    font-size: 1.9rem;
+    @include spl{
+        font-size: 1.7rem;
+    }
+}
+
+.u-fs__p19s18{
+    font-size: 1.9rem;
+    @include spl{
+        font-size: 1.8rem;
+    }
+}
+
+.u-fs__p19s19{
+    font-size: 1.9rem;
+}
+
+.u-fs__p19s20{
+    font-size: 1.9rem;
+    @include spl{
+        font-size: 2.0rem;
+    }
+}
+
+// 20px
+.u-fs__p20s10{
+    font-size: 2.0rem;
+    @include spl{
+        font-size: 1.0rem;
+    }
+}
+
+.u-fs__p20s11{
+    font-size: 2.0rem;
+    @include spl{
+        font-size: 1.1rem;
+    }
+}
+
+.u-fs__p20s12{
+    font-size: 2.0rem;
+    @include spl{
+        font-size: 1.2rem;
+    }
+}
+
+.u-fs__p20s13{
+    font-size: 2.0rem;
+    @include spl{
+        font-size: 1.3rem;
+    }
+}
+
+.u-fs__p20s14{
+    font-size: 2.0rem;
+    @include spl{
+        font-size: 1.4rem;
+    }
+}
+
+.u-fs__p20s15{
+    font-size: 2.0rem;
+    @include spl{
+        font-size: 1.5rem;
+    }
+}
+
+.u-fs__p20s16{
+    font-size: 2.0rem;
+    @include spl{
+        font-size: 1.6rem;
+    }
+}
+
+.u-fs__p20s17{
+    font-size: 2.0rem;
+    @include spl{
+        font-size: 1.7rem;
+    }
+}
+
+.u-fs__p20s18{
+    font-size: 2.0rem;
+    @include spl{
+        font-size: 1.8rem;
+    }
+}
+
+.u-fs__p20s19{
+    font-size: 2.0rem;
+    @include spl{
+        font-size: 1.9rem;
+    }
+}
+
+.u-fs__p20s20{
+    font-size: 2.0rem;
+}
