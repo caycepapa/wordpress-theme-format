@@ -1,3 +1,258 @@
-@charset "UTF-8";
+@use "./foundations/var" as *;
+@use "./foundations/gutenberg" as *;
 
-@use './foundations/var' as *;
+.editor-styles-wrapper{
+    width: 800px;
+    margin: 0 auto;
+}
+
+body{
+    font-family: var(--font-main);
+    font-size: 15px;
+
+    .wp-block-heading{
+        margin-bottom: var(--space-1);
+    }
+    
+    .wp-block-button__link{
+        background-color: var(--color-main);
+        color: var(--color-white);
+    
+        &.is-hover{
+            background-color: var(--color-white);
+            color: var(--color-main);
+        }
+    }
+
+    .has-background{
+        border-radius: 16px;
+    }
+
+    h1{
+        font-size: 30px;
+    }
+
+    h2.wp-block-heading{
+        background-color: var(--color-main);
+        color: var(--color-white);
+        border-radius: 9999px 9999px 0 9999px;
+        padding: 4px 16px;
+        width: fit-content;
+        margin-inline: auto;
+        font-size: 18px;
+        font-weight: normal;
+
+        &.is-style-has-text-color-yellow{
+            background-color: var(--color-yellow);
+            color: var(--color-main);
+        }
+    }
+    h3.wp-block-heading{
+        font-size: 16px;
+        border-bottom: 1px solid var(--color-main);
+        color: var(--color-main);
+        width: 100%;
+        margin-right: auto;
+    }
+
+    h4.wp-block-heading{
+        font-size: 16px;
+        font-weight: bold;
+    }
+    h5.wp-block-heading{
+        font-size: 14px;
+        font-weight: bold;
+    }
+    h6.wp-block-heading{
+        font-size: 14px;
+    }
+
+
+    /*-----------------------------------------
+    グループの背景色
+    -----------------------------------------*/
+
+    .wp-block-group{
+        // 共通のスタイル
+        &.is-style-has-bg-color-gray,
+        &.is-style-has-bg-color-lightblue,
+        &.is-style-has-bg-color-white,
+        &.is-style-has-bg-color-yellow,
+        &.is-style-has-bg-color-red{
+
+            &>.wp-block-group__inner-container{
+                position: relative;
+                padding: 32px;
+
+                &:before{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    border-radius: 50px 50px 0 0;
+
+                    @include spl{
+                        border-radius: 32px 32px 0 0;
+                    }
+                }
+            }
+        }
+
+        // グレー
+        &.is-style-has-bg-color-gray{
+            &>.wp-block-group__inner-container{
+                &:before{
+                    background-color: var(--color-gray);
+                }
+            }
+        }
+
+        // ライトブルー
+        &.is-style-has-bg-color-lightblue{
+            &>.wp-block-group__inner-container{
+                &:before{
+                    background-color: var(--color-lightblue);
+                }
+            }
+        }
+
+        // white
+        &.is-style-has-bg-color-white{
+            &>.wp-block-group__inner-container{
+                &:before{
+                    background-color: var(--color-white);
+                }
+            }
+        }
+
+        // yellow
+        &.is-style-has-bg-color-yellow{
+            &>.wp-block-group__inner-container{
+                &:before{
+                    background-color: var(--color-yellow);
+                }
+            }
+        }
+
+        &.is-acf-block{
+            &>.wp-block-group__inner-container{
+                &::before{
+                    z-index: 0;
+                }
+                &>*{
+                    position: relative;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+
+    /*-----------------------------------------
+    button
+    -----------------------------------------*/
+    .wp-block-button{
+
+        &.is-style-has-bg-color-yellow,
+        &.is-style-has-bg-color-white{
+            .wp-block-button__link{
+                border: 1px solid var(--color-main);
+                box-shadow: 8px 8px 0 var(--color-main);
+                font-weight: bold;
+                position: relative;
+                padding-right: 56px;
+                padding-left: 56px;
+                min-width: 330px;
+                width: fit-content;
+
+                &::after{
+                    content: '';
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    background-color: var(--color-white);
+                    border: 1px solid var(--color-main);
+                    position: absolute;
+                    right: var(--space-2);
+                    top: 50%;
+                    transform: translateY(-50%);
+                    border-radius: 9999px;
+                    background-image: url(../img/cmn/icon-arrow-right.svg);
+                    background-position: center center;
+                    background-size: 4px 8px;
+                    background-repeat: no-repeat;
+                }
+
+                &.is-hover{
+                    transform: translate(8px, 8px);
+                    box-shadow: none;
+                }
+            }
+        }
+
+        &.is-style-has-bg-color-yellow{
+            .wp-block-button__link{
+                background-color: var(--color-yellow);
+                color: var(--color-main);
+                
+            }
+        }
+
+        &.is-style-has-bg-color-white{
+            .wp-block-button__link{
+                background-color: var(--color-white);
+                color: var(--color-main);
+            }
+        }
+    }
+
+    .has-blue-color{
+        color: var(--color-main);
+    }
+
+    .has-gray-color{
+        color: var(--color-gray);
+    }
+
+    .has-white-color{
+        color: var(--color-white);
+    }
+
+    .has-yellow-color{
+        color: var(--color-yellow);
+    }
+
+    .has-black-color{
+        color: var(--color-black);
+    }
+
+    .has-red-color{
+        color: var(--color-red);
+    }
+
+    .has-blue-background-color{
+        background-color: var(--color-main);
+    }
+
+    .has-gray-background-color{
+        background-color: var(--color-gray);
+    }
+
+    .has-white-background-color{
+        background-color: var(--color-white);
+    }
+
+    .has-yellow-background-color{
+        background-color: var(--color-yellow);
+    }
+
+    .has-black-background-color{
+        background-color: var(--color-black);
+    }
+
+    .has-red-background-color{
+        background-color: var(--color-red);
+    }
+}
