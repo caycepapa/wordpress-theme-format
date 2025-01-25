@@ -23,96 +23,72 @@ add_action( 'after_setup_theme', 'editor_setup' );
 
 
 /* 
-パターンの非表示 & 親カテゴリの非表示
----------------------------------------------- */
-function my_head() {
-    ?>
-        <style>
-            #tab-panel-0-patterns{
-                display: none !important;
-            }
-            .editor-post-taxonomies__hierarchical-terms-add + form .components-base-control:not(:first-child){
-                display: none !important;
-            }
-            #postbox-container-1 #wp-version{
-                display: none !important;
-            }
-            #dashboard_right_now .page-count{
-                display: none !important;
-            }
-        </style>
-    <?php
+テーマカラーの設定
+----------------------------------------------
+function my_color_pallet(){
+    add_theme_support('editor-color-palette',array(
+        array(
+            'name' => __('main-color1','NGS blue'),
+            'slug' => 'blue',
+            'color' => '#008CD6',
+        ),
+    ));
 }
-add_action('admin_head', 'my_head', 11);
+add_action('after_setup_theme', 'my_color_pallet');
+*/
 
-/* 
-ブロックエディタ非表示
----------------------------------------------- */
-add_action('acf/init', 'my_acf_init_block_types', 10, 2);
-function my_acf_init_block_types() {
-    if( function_exists('acf_register_block_type') ) {
 
-        // ページダウン
-        acf_register_block_type(array(
-            'name'              => 'pagedown',
-            'title'             => __('ページダウン'),
-            'description'       => __('ページダウンのカスタムブロックです。'),
-            'render_template'   => 'acf/blocks/pagedown.php',
-            'category'          => 'acf-blocks',
-            'icon'              => 'button',
-            'keywords'          => array( 'button', 'pagedown' ),
-            'mode' => 'auto',
-        ));
+/*
+ブロックエディタのクラス付与
+---------------------------------------------- 
+function mytheme_register_block_styles() {
 
-        // h1-ttl
-        acf_register_block_type(array(
-            'name'              => 'h1-ttl',
-            'title'             => __('H1タイトル'),
-            'description'       => __('H1タイトルのカスタムブロックです。'),
-            'render_template'   => 'acf/blocks/h1-ttl.php',
-            'category'          => 'acf-blocks',
-            'icon'              => 'admin-site',
-            'keywords'          => array( 'h1', 'ttl' ),
-            'mode' => 'auto',
-        ));
-    }
-}
-
-/* 
-ブロックエディタ非表示
----------------------------------------------- */
-add_filter( 'allowed_block_types_all', 'my_plugin_allowed_block_types_all', 10, 2 );
-function my_plugin_allowed_block_types_all( $allowed_block_types) {
-	$allowed_block_types = array(
-		'core/paragraph',
-		'core/heading',
-		'core/image',
-        'core/button',
-        'core/buttons',
-        'core/embed',
-        'core/file',
-        'core/gallery',
-        'core/list',
-        'core/shortcode',
-        'core/table',
-        'core/columns',
+    // グループのスタイル
+    register_block_style(
         'core/group',
-        'acf/pagedown',
-        'acf/h1-ttl',
-	);
-	return $allowed_block_types;
+        array(
+            'name'  => 'has-bg-color-gray',
+            'label' => __( '背景色グレー', 'mytheme' ),
+        )
+    );
+    register_block_style(
+        'core/group',
+        array(
+            'name'  => 'has-bg-color-lightblue',
+            'label' => __( '背景色水色', 'mytheme' ),
+        )
+    );
+    register_block_style(
+        'core/group',
+        array(
+            'name'  => 'has-bg-color-white',
+            'label' => __( '背景色白', 'mytheme' ),
+        )
+    );
+    register_block_style(
+        'core/group',
+        array(
+            'name'  => 'has-bg-color-yellow',
+            'label' => __( '背景色黄色', 'mytheme' ),
+        )
+    );
+
+    // 見出しのh2のスタイル
+    register_block_style(
+        'core/heading',
+        array(
+            'name'  => 'has-text-color-yellow',
+            'label' => __( 'h2黄色背景青文字', 'mytheme' ),
+        )
+    );
+
+    // ボタンのスタイル
+    register_block_style(
+        'core/button',
+        array(
+            'name'  => 'has-bg-color-yellow',
+            'label' => __( '黄色背景', 'mytheme' ),
+        )
+    );
 }
-
-function add_block_categories( $categories ) {
-    $add_categories = [
-        [
-        'slug' => 'acf-blocks',
-        'title' => '専用ブロック',
-        ],
-    ];
-
-    $categories = array_merge( $add_categories, $categories );
-    return $categories;
-}
-
-add_filter( 'block_categories', 'add_block_categories', 10, 2 );
+add_action( 'init', 'mytheme_register_block_styles' );*/

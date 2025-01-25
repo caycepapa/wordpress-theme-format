@@ -55,8 +55,6 @@ function my_custom_menu_order($menu_order) {
         'index.php', //ダッシュボード
 		'separator1', //セパレータ２
         'edit.php', //お知らせ
-        'edit.php?post_type=kaiin', //ブログページ
-        'edit.php?post_type=yakuin', //固定ページ
         'separator2', //セパレータ２
         'edit.php?post_type=meibo', //ブログページ
         'edit.php?post_type=options', //ブログページ
