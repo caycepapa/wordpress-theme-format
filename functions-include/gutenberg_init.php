@@ -28,7 +28,7 @@ add_action( 'after_setup_theme', 'editor_setup' );
 function my_color_pallet(){
     add_theme_support('editor-color-palette',array(
         array(
-            'name' => __('main-color1','NGS blue'),
+            'name' => __('main-color1','blue'),
             'slug' => 'blue',
             'color' => '#008CD6',
         ),
