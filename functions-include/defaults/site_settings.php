@@ -14,7 +14,7 @@ function site_settings_page() {
     ?>
     <div class="wrap">
         <h1>サイト設定</h1>
-        <form method="post" action="options.php" enctype="multipart/form-data">
+        <form method="post" action="options.php">
             <?php
             settings_fields('site_settings_group');
             do_settings_sections('site_settings');
