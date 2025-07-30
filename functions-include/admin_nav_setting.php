@@ -56,8 +56,6 @@ function my_custom_menu_order($menu_order) {
 		'separator1', //セパレータ２
         'edit.php', //お知らせ
         'separator2', //セパレータ２
-        'edit.php?post_type=meibo', //ブログページ
-        'edit.php?post_type=options', //ブログページ
         'upload.php', //メディア (一番下に移動しました)
 		'separator3', //セパレータ２
         'separator-last', //最後のセパレータ

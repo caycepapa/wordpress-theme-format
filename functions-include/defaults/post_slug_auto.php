@@ -13,7 +13,7 @@
 投稿記事のスラッグをID番号で採番
 ---------------------------------------------- */
 function custom_auto_post_slug( $slug, $post_ID, $post_status, $post_type ) {
-    if( $post_type == 'posts' || $post_type == 'recruit'){
+    if( $post_type == 'posts'){
         $slug = $post_ID;
     }
     return $slug;
