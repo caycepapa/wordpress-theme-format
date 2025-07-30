@@ -9,31 +9,6 @@
         die( 'Forbidden' );
     }
 
-// 管理画面にメニューを追加
-add_action('admin_menu', 'add_origin_settings_menu');
-function add_origin_settings_menu() {
-    // 独自設定メニューを追加
-    add_menu_page(
-        '独自設定',
-        '独自設定',
-        'manage_options',
-        'origin-settings',
-        'origin_settings_page',
-        'dashicons-admin-generic',
-        100
-    );
-    
-    // リンク設定サブメニューを追加
-    add_submenu_page(
-        'origin-settings',
-        'リンク設定',
-        'リンク設定',
-        'manage_options',
-        'origin-links',
-        'origin_links_page'
-    );
-}
-
 // 独自設定メインページ
 function origin_settings_page() {
     ?>

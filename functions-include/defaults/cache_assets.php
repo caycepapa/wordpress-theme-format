@@ -9,19 +9,6 @@
         die( 'Forbidden' );
     }
 
-// 独自設定メニューにサイト設定サブメニューを追加
-add_action('admin_menu', 'add_site_settings_menu', 11);
-function add_site_settings_menu() {
-    add_submenu_page(
-        'origin-settings',
-        'サイト設定',
-        'サイト設定',
-        'manage_options',
-        'site-settings',
-        'site_settings_page'
-    );
-}
-
 // サイト設定ページ
 function site_settings_page() {
     ?>

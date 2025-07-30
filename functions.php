@@ -29,6 +29,8 @@ get_template_part('functions-include/defaults/gutenberg_init');
 get_template_part('functions-include/defaults/post_slug_auto');
 // 外部チェックのリミット解除
 get_template_part('functions-include/defaults/public_post_limit');
+// 管理画面メニューのカスタマイズ
+get_template_part('functions-include/defaults/admin_menu');
 // リンク（ACFのプラグインが必要）
 get_template_part('functions-include/defaults/origin_links');
 // css・jsをキャッシュさせるかどうか
