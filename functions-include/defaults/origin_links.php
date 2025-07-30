@@ -100,19 +100,10 @@ function origin_links_page() {
         
         <h2>設定した値の取得方法</h2>
         <pre style="background: #f1f1f1; padding: 15px; overflow: auto;">
-// すべてのリンクを取得
-$links = get_option('origin_links', array());
-
-// ループで出力する例
-if (!empty($links)) {
-    echo '&lt;ul&gt;';
-    foreach ($links as $link) {
-        if (!empty($link['name']) && !empty($link['url'])) {
-            echo '&lt;li&gt;&lt;a href="' . esc_url($link['url']) . '"&gt;' . esc_html($link['name']) . '&lt;/a&gt;&lt;/li&gt;';
-        }
-    }
-    echo '&lt;/ul&gt;';
-}
+                // リンク名を指定してURLを取得
+                get_origin_link('リンク名');
+                // リンク名を指定してURLを表示
+                the_origin_link('リンク名');
         </pre>
     </div>
     
@@ -183,4 +174,18 @@ function sanitize_origin_links($input) {
     }
     
     return $sanitized;
+}
+
+function get_origin_link($name){
+    $links = get_option('origin_links', array());
+    foreach ($links as $link) {
+        if (isset($link['name']) && $link['name'] === $name) {
+            return isset($link['url']) ? esc_url($link['url']) : '';
+        }
+    }
+    return '';
+}
+
+function the_origin_link($name){
+    echo get_origin_link($name);
 }
