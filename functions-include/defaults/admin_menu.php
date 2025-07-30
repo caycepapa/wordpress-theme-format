@@ -48,6 +48,9 @@ function add_origin_settings_menu() {
         'origin-links',
         'origin_links_page'
     );
+    
+    // デフォルトの「独自設定」サブメニューを削除
+    remove_submenu_page('origin-settings', 'origin-settings');
 }
 
 // 独自設定メニューをクリックした際にサイト設定にリダイレクト
