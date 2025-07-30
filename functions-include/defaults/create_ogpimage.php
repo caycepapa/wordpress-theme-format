@@ -53,86 +53,88 @@ function ogp_image_settings_init() {
         'site_settings'
     );
     
-    add_settings_field(
-        'default_ogp_image',
-        'OGP画像',
-        'default_ogp_image_callback',
-        'site_settings',
-        'ogp_image_section'
-    );
-    
-    register_setting('site_settings_group', 'default_ogp_image');
+    register_setting('site_settings_group', 'default_ogp_image_url');
 }
 
 // セクションの説明
 function ogp_image_section_callback() {
-    echo '<p>SNSでシェアされた際に表示されるデフォルトのOGP画像を設定します。</p>';
-}
-
-// OGP画像フィールドの表示
-function default_ogp_image_callback() {
-    $ogp_image_id = get_option('default_ogp_image');
-    $ogp_image_url = $ogp_image_id ? wp_get_attachment_url($ogp_image_id) : '';
-    ?>
-    <div id="ogp_image_preview" style="margin-bottom: 10px;">
-        <?php if ($ogp_image_url) : ?>
-            <img src="<?php echo esc_url($ogp_image_url); ?>" style="max-width: 600px; height: auto; display: block; margin-bottom: 10px; border: 1px solid #ddd;">
-        <?php endif; ?>
-    </div>
-    <input type="hidden" name="default_ogp_image" id="default_ogp_image" value="<?php echo esc_attr($ogp_image_id); ?>">
-    <button type="button" class="button" id="upload_ogp_image_button">画像を選択</button>
-    <?php if ($ogp_image_id) : ?>
-        <button type="button" class="button" id="remove_ogp_image_button" style="margin-left: 5px;">画像を削除</button>
-    <?php endif; ?>
-    <p class="description">推奨サイズ: 1200×630px（Facebook、Twitter等のOGPに使用されます）</p>
-    
-    <script>
-    jQuery(document).ready(function($) {
-        var frame;
-        
-        $('#upload_ogp_image_button').on('click', function(e) {
-            e.preventDefault();
+    // 画像アップロード処理
+    if (isset($_POST['upload_ogp_image']) && check_admin_referer('upload_ogp_image_nonce')) {
+        if (!empty($_FILES['ogp_image_file']['name'])) {
+            require_once(ABSPATH . 'wp-admin/includes/file.php');
+            require_once(ABSPATH . 'wp-admin/includes/media.php');
+            require_once(ABSPATH . 'wp-admin/includes/image.php');
             
-            if (frame) {
-                frame.open();
-                return;
+            $uploaded_file = wp_handle_upload($_FILES['ogp_image_file'], array('test_form' => false));
+            
+            if (!isset($uploaded_file['error'])) {
+                $attachment = array(
+                    'post_mime_type' => $uploaded_file['type'],
+                    'post_title' => preg_replace('/\.[^.]+$/', '', basename($uploaded_file['file'])),
+                    'post_content' => '',
+                    'post_status' => 'inherit'
+                );
+                
+                $attach_id = wp_insert_attachment($attachment, $uploaded_file['file']);
+                $attach_data = wp_generate_attachment_metadata($attach_id, $uploaded_file['file']);
+                wp_update_attachment_metadata($attach_id, $attach_data);
+                
+                // 古い画像を削除
+                $old_id = get_option('default_ogp_image');
+                if ($old_id) {
+                    wp_delete_attachment($old_id, true);
+                }
+                
+                update_option('default_ogp_image', $attach_id);
+                update_option('default_ogp_image_url', $uploaded_file['url']);
+                echo '<div class="notice notice-success"><p>OGP画像をアップロードしました。</p></div>';
+            } else {
+                echo '<div class="notice notice-error"><p>アップロードエラー: ' . esc_html($uploaded_file['error']) . '</p></div>';
             }
-            
-            frame = wp.media({
-                title: 'OGP画像を選択',
-                button: {
-                    text: 'この画像を使用'
-                },
-                multiple: false
-            });
-            
-            frame.on('select', function() {
-                var attachment = frame.state().get('selection').first().toJSON();
-                $('#default_ogp_image').val(attachment.id);
-                $('#ogp_image_preview').html('<img src="' + attachment.url + '" style="max-width: 600px; height: auto; display: block; margin-bottom: 10px; border: 1px solid #ddd;">');
-                $('#remove_ogp_image_button').remove();
-                $('#upload_ogp_image_button').after('<button type="button" class="button" id="remove_ogp_image_button" style="margin-left: 5px;">画像を削除</button>');
-            });
-            
-            frame.open();
-        });
-        
-        $(document).on('click', '#remove_ogp_image_button', function(e) {
-            e.preventDefault();
-            $('#default_ogp_image').val('');
-            $('#ogp_image_preview').html('');
-            $(this).remove();
-        });
-    });
-    </script>
-    <?php
-}
-
-// メディアアップローダーのスクリプトを読み込む
-add_action('admin_enqueue_scripts', 'enqueue_ogp_media_uploader');
-function enqueue_ogp_media_uploader($hook) {
-    if ($hook !== 'origin-settings_page_site-settings') {
-        return;
+        }
     }
-    wp_enqueue_media();
+    
+    // 画像削除処理
+    if (isset($_POST['delete_ogp_image']) && check_admin_referer('delete_ogp_image_nonce')) {
+        $ogp_image_id = get_option('default_ogp_image');
+        if ($ogp_image_id) {
+            wp_delete_attachment($ogp_image_id, true);
+        }
+        delete_option('default_ogp_image');
+        delete_option('default_ogp_image_url');
+        echo '<div class="notice notice-success"><p>OGP画像を削除しました。</p></div>';
+    }
+    
+    $ogp_image_url = get_option('default_ogp_image_url');
+    ?>
+    <p>SNSでシェアされた際に表示されるデフォルトのOGP画像を設定します。</p>
+    
+    <?php if ($ogp_image_url) : ?>
+        <div style="margin: 20px 0;">
+            <img src="<?php echo esc_url($ogp_image_url); ?>" style="max-width: 600px; height: auto; display: block; margin-bottom: 10px; border: 1px solid #ddd;">
+            <form method="post" style="display: inline;">
+                <?php wp_nonce_field('delete_ogp_image_nonce'); ?>
+                <input type="hidden" name="delete_ogp_image" value="1">
+                <button type="submit" class="button button-secondary" onclick="return confirm('OGP画像を削除してもよろしいですか？');">画像を削除</button>
+            </form>
+        </div>
+    <?php endif; ?>
+    
+    <form method="post" enctype="multipart/form-data" style="margin-top: 20px;">
+        <?php wp_nonce_field('upload_ogp_image_nonce'); ?>
+        <table class="form-table">
+            <tr>
+                <th scope="row">新しいOGP画像をアップロード</th>
+                <td>
+                    <input type="file" name="ogp_image_file" accept="image/*" required>
+                    <p class="description">推奨サイズ: 1200×630px（Facebook、Twitter等のOGPに使用されます）</p>
+                </td>
+            </tr>
+        </table>
+        <input type="hidden" name="upload_ogp_image" value="1">
+        <p>
+            <button type="submit" class="button button-primary">画像をアップロード</button>
+        </p>
+    </form>
+    <?php
 }
