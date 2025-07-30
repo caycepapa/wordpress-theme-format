@@ -21,6 +21,8 @@ get_template_part('functions-include/defaults/text_cut');
 get_template_part('functions-include/defaults/create_title');
 // ディスクリプション生成
 get_template_part('functions-include/defaults/create_description');
+// OGP画像生成
+get_template_part('functions-include/defaults/create_ogpimage');
 // gutenbergのカスタマイズ
 get_template_part('functions-include/defaults/gutenberg_init');
 // スラッグの自動採番
