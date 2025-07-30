@@ -50,12 +50,12 @@ function add_origin_settings_menu() {
     );
 }
 
-// 独自設定メニューをクリックした際にリンク設定にリダイレクト
+// 独自設定メニューをクリックした際にサイト設定にリダイレクト
 add_action('admin_init', 'redirect_origin_settings');
 function redirect_origin_settings() {
     global $pagenow;
     if ($pagenow == 'admin.php' && isset($_GET['page']) && $_GET['page'] == 'origin-settings') {
-        wp_redirect(admin_url('admin.php?page=origin-links'));
+        wp_redirect(admin_url('admin.php?page=site-settings'));
         exit;
     }
 }
