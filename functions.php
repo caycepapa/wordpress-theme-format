@@ -39,16 +39,13 @@ get_template_part('functions-include/defaults/create_ogpimage');
 get_template_part('functions-include/defaults/cache_assets');
 
 // ページネーション
-get_template_part('functions-include/pagination');
+// get_template_part('functions-include/pagination');
 
 // リライトルールの調整が必要な場合
 // get_template_part('functions-include/rewrite_rule');
 
-// 投稿をお知らせに変更
-get_template_part('functions-include/admin_nav_setting');
-
 // パンくずリスト
-get_template_part('functions-include/breadcrumb');
+// get_template_part('functions-include/breadcrumb');
 
 // contact form7のPタグ削除
 // get_template_part('functions-include/contactform7');
