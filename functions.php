@@ -9,19 +9,24 @@
         die( 'Forbidden' );
     }
 
-/* 
-アイキャッチの許可
----------------------------------------------- */
+// アイキャッチ有効化
 add_theme_support( 'post-thumbnails' );
 
+/* 
+ROOTSデフォルト関数
+---------------------------------------------- */
+// タイトルの文字数制限
+get_template_part('functions-include/defaults/text_cut');
 // タイトル生成
-get_template_part('functions-include/create_title');
+get_template_part('functions-include/defaults/create_title');
+// ディスクリプション生成
+get_template_part('functions-include/defaults/create_description');
+
 
 // ページネーション
 get_template_part('functions-include/pagination');
 
-// タイトルの文字数制限
-get_template_part('functions-include/text_cut');
+
 
 // リライトルールの調整が必要な場合
 // get_template_part('functions-include/rewrite_rule');
