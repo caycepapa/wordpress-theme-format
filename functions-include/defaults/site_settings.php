@@ -11,6 +11,11 @@
 
 // サイト設定ページ
 function site_settings_page() {
+    // 設定保存後のメッセージ表示
+    if (isset($_GET['settings-updated']) && $_GET['settings-updated'] == 'true') {
+        echo '<div class="notice notice-success"><p>設定を保存しました。</p></div>';
+    }
+    
     // OGP画像のアップロード・削除処理
     if (isset($_POST['upload_ogp_image']) && check_admin_referer('upload_ogp_image_nonce')) {
         ogp_image_upload_handler();
