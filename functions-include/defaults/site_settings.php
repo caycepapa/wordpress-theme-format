@@ -18,7 +18,6 @@ function site_settings_page() {
             <?php
             settings_fields('site_settings_group');
             do_settings_sections('site-settings');
-            submit_button();
             ?>
         </form>
     </div>

@@ -61,4 +61,5 @@ function disable_cache_assets_callback() {
     </label>
     <p class="description">チェックを入れると、style.cssとbundle.jsの後に日付時分秒のパラメータが付与されます。</p>
     <?php
+    submit_button();
 }

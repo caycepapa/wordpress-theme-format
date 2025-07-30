@@ -109,6 +109,7 @@ function ogp_image_section_callback() {
     ?>
     <p>SNSでシェアされた際に表示されるデフォルトのOGP画像を設定します。</p>
     
+    
     <?php if ($ogp_image_url) : ?>
         <div style="margin: 20px 0;">
             <img src="<?php echo esc_url($ogp_image_url); ?>" style="max-width: 600px; height: auto; display: block; margin-bottom: 10px; border: 1px solid #ddd;">
@@ -137,4 +138,6 @@ function ogp_image_section_callback() {
         </p>
     </form>
     <?php
+
+    submit_button();
 }
