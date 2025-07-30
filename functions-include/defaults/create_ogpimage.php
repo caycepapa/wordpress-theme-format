@@ -26,7 +26,19 @@ function create_ogpimage(){
     
     // アイキャッチ画像が存在しない場合、デフォルトのOGP画像を設定
     if(!$ogp_image){
-        $ogp_image = get_template_directory_uri() . '/assets/img/ogp.png';
+        // サイト設定で設定されたOGP画像を取得
+        $default_ogp_id = get_option('default_ogp_image');
+        if($default_ogp_id){
+            $default_ogp_url = wp_get_attachment_url($default_ogp_id);
+            if($default_ogp_url){
+                $ogp_image = $default_ogp_url;
+            }
+        }
+        
+        // それでも画像がない場合は、テーマのデフォルト画像を使用
+        if(!$ogp_image){
+            $ogp_image = get_template_directory_uri() . '/assets/img/ogp.png';
+        }
     }
     
     return $ogp_image;

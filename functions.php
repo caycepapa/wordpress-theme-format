@@ -21,8 +21,6 @@ get_template_part('functions-include/defaults/text_cut');
 get_template_part('functions-include/defaults/create_title');
 // ディスクリプション生成
 get_template_part('functions-include/defaults/create_description');
-// OGP画像生成
-get_template_part('functions-include/defaults/create_ogpimage');
 // gutenbergのカスタマイズ
 get_template_part('functions-include/defaults/gutenberg_init');
 // スラッグの自動採番
@@ -31,10 +29,14 @@ get_template_part('functions-include/defaults/post_slug_auto');
 get_template_part('functions-include/defaults/public_post_limit');
 // 管理画面メニューのカスタマイズ
 get_template_part('functions-include/defaults/admin_menu');
-// リンク（ACFのプラグインが必要）
+// サイト設定画面生成
+get_template_part('functions-include/defaults/site_settings');
+// リンク（admin_menuが必要）
 get_template_part('functions-include/defaults/origin_links');
-// css・jsをキャッシュさせるかどうか
+// css・jsをキャッシュさせるかどうか（admin_menuが必要）
 get_template_part('functions-include/defaults/cache_assets');
+// OGP画像生成（admin_menuが必要）
+get_template_part('functions-include/defaults/create_ogpimage');
 
 // ページネーション
 get_template_part('functions-include/pagination');

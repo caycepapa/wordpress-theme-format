@@ -9,40 +9,6 @@
         die( 'Forbidden' );
     }
 
-// サイト設定ページ
-function site_settings_page() {
-    ?>
-    <div class="wrap">
-        <h1>サイト設定</h1>
-        <form method="post" action="options.php">
-            <?php
-            settings_fields('site_settings_group');
-            do_settings_sections('site_settings');
-            ?>
-            <table class="form-table">
-                <tr>
-                    <th scope="row">キャッシュ設定</th>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="disable_cache_assets" value="1" <?php checked(get_option('disable_cache_assets'), 1); ?> />
-                            CSS・JavaScriptをキャッシュさせない
-                        </label>
-                        <p class="description">チェックを入れると、style.cssとbundle.jsの後に日付時分秒のパラメータが付与されます。</p>
-                    </td>
-                </tr>
-            </table>
-            <?php submit_button(); ?>
-        </form>
-    </div>
-    <?php
-}
-
-// 設定を登録
-add_action('admin_init', 'site_settings_init');
-function site_settings_init() {
-    register_setting('site_settings_group', 'disable_cache_assets');
-}
-
 // キャッシュバスターパラメータを取得
 function get_cache_assets() {
     $disable_cache = get_option('disable_cache_assets');
