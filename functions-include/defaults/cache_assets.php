@@ -26,20 +26,20 @@ function the_cache_assets() {
 }
 
 // キャッシュ設定をサイト設定ページに追加
-add_action('admin_init', 'cache_assets_settings_init');
+add_action('admin_init', 'cache_assets_settings_init', 5);
 function cache_assets_settings_init() {
     add_settings_section(
         'cache_assets_section',
         'キャッシュ設定',
         'cache_assets_section_callback',
-        'site_settings'
+        'site-settings'
     );
     
     add_settings_field(
         'disable_cache_assets',
         'キャッシュ無効化',
         'disable_cache_assets_callback',
-        'site_settings',
+        'site-settings',
         'cache_assets_section'
     );
     

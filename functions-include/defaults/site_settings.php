@@ -17,7 +17,7 @@ function site_settings_page() {
         <form method="post" action="options.php">
             <?php
             settings_fields('site_settings_group');
-            do_settings_sections('site_settings');
+            do_settings_sections('site-settings');
             submit_button();
             ?>
         </form>

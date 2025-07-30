@@ -44,13 +44,13 @@ function the_create_ogpimage(){
 }
 
 // OGP画像設定をサイト設定ページに追加
-add_action('admin_init', 'ogp_image_settings_init');
+add_action('admin_init', 'ogp_image_settings_init', 5);
 function ogp_image_settings_init() {
     add_settings_section(
         'ogp_image_section',
         'デフォルトOGP画像設定',
         'ogp_image_section_callback',
-        'site_settings'
+        'site-settings'
     );
     
     register_setting('site_settings_group', 'default_ogp_image_url');
