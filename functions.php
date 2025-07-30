@@ -33,10 +33,10 @@ get_template_part('functions-include/defaults/admin_menu');
 get_template_part('functions-include/defaults/site_settings');
 // リンク（admin_menuが必要）
 get_template_part('functions-include/defaults/origin_links');
-// css・jsをキャッシュさせるかどうか（admin_menuが必要）
-get_template_part('functions-include/defaults/cache_assets');
 // OGP画像生成（admin_menuが必要）
 get_template_part('functions-include/defaults/create_ogpimage');
+// css・jsをキャッシュさせるかどうか（admin_menuが必要）
+get_template_part('functions-include/defaults/cache_assets');
 
 // ページネーション
 get_template_part('functions-include/pagination');
