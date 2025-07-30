@@ -27,10 +27,12 @@ get_template_part('functions-include/defaults/create_ogpimage');
 get_template_part('functions-include/defaults/gutenberg_init');
 // スラッグの自動採番
 get_template_part('functions-include/defaults/post_slug_auto');
-// 外部チェックのリミット解除（public post previewのプラグインが必要）
+// 外部チェックのリミット解除
 get_template_part('functions-include/defaults/public_post_limit');
 // リンク（ACFのプラグインが必要）
 get_template_part('functions-include/defaults/origin_links');
+// css・jsをキャッシュさせるかどうか
+get_template_part('functions-include/defaults/cache_assets');
 
 // ページネーション
 get_template_part('functions-include/pagination');

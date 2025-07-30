@@ -15,7 +15,7 @@
 <head>
     <?php wp_head(); ?>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri());?>/assets/css/style.css?<?php echo date('YmdHis'); ?>">
+    <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri());?>/assets/css/style.css<?php the_cache_assets(); ?>">
     <link rel="icon" href="<?php echo esc_url(get_template_directory_uri());?>/favicon.ico">
     <meta name="viewport" content="width=device-width, height=device-height ,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description" content="<?php the_create_description();?>">
